@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jodika Sela — Web Developer Enthusiast</title>
+  <meta name="description" content="Portofolio pribadi Jodika Sela, mahasiswa Rekayasa Sistem Komputer Universitas Tanjungpura & Web Developer Enthusiast." />
+  <meta name="keywords" content="Jodika Sela, portofolio, web developer, rekayasa sistem komputer, untan" />
+  <meta name="author" content="Jodika Sela" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Jodika Sela — Portofolio" />
+  <meta property="og:description" content="Mahasiswa Rekayasa Sistem Komputer | Web Developer Enthusiast" />
+  <meta property="og:type" content="website" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- AOS Animation -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css" rel="stylesheet" />
+
+  <!-- Tailwind CSS (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            navy: { DEFAULT: '#0a1428', light: '#0f2346', dark: '#060d1c' },
+            cyan: { DEFAULT: '#22d3ee', light: '#67e8f9', dark: '#0891b2' },
+          },
+          fontFamily: {
+            heading: ['"Space Grotesk"', 'sans-serif'],
+            body: ['"Poppins"', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="font-body bg-white text-navy transition-colors duration-500">
+
+  <!-- ============ LOADING SCREEN ============ -->
+  <div id="loading-screen" aria-hidden="true">
+    <div class="loader-mark">JS</div>
+    <div class="loader-bar"><span></span></div>
+  </div>
+
+  <!-- ============ SCROLL PROGRESS BAR ============ -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- ============ NAVBAR ============ -->
+  <header id="navbar" class="fixed top-0 left-0 w-full z-40 transition-all duration-300">
+    <nav class="max-w-7xl mx-auto flex items-center justify-between px-6 lg:px-10 py-4">
+      <a href="#home" class="font-heading font-bold text-xl tracking-tight nav-logo">
+        Jodika<span class="text-cyan">.</span>Sela
+      </a>
+
+      <!-- Desktop Menu -->
+      <ul class="hidden md:flex items-center gap-8 font-medium text-sm nav-links">
+        <li><a href="#home" class="nav-link">Beranda</a></li>
+        <li><a href="#about" class="nav-link">Tentang</a></li>
+        <li><a href="#skills" class="nav-link">Keahlian</a></li>
+        <li><a href="#education" class="nav-link">Pendidikan</a></li>
+        <li><a href="#experience" class="nav-link">Pengalaman</a></li>
+        <li><a href="#projects" class="nav-link">Proyek</a></li>
+        <li><a href="#contact" class="nav-link">Kontak</a></li>
+      </ul>
+
+      <div class="flex items-center gap-3">
+        <!-- Dark/Light Mode Toggle -->
+        <button id="theme-toggle" aria-label="Ubah mode tampilan" class="theme-toggle-btn">
+          <i class="fa-solid fa-moon" id="theme-icon"></i>
+        </button>
+        <!-- Mobile Menu Button -->
+        <button id="menu-toggle" aria-label="Buka menu navigasi" class="md:hidden text-xl">
+          <i class="fa-solid fa-bars" id="menu-icon"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <ul id="mobile-menu" class="md:hidden hidden flex-col gap-1 px-6 pb-6 font-medium text-sm mobile-menu">
+      <li><a href="#home" class="mobile-link">Beranda</a></li>
+      <li><a href="#about" class="mobile-link">Tentang</a></li>
+      <li><a href="#skills" class="mobile-link">Keahlian</a></li>
+      <li><a href="#education" class="mobile-link">Pendidikan</a></li>
+      <li><a href="#experience" class="mobile-link">Pengalaman</a></li>
+      <li><a href="#projects" class="mobile-link">Proyek</a></li>
+      <li><a href="#contact" class="mobile-link">Kontak</a></li>
+    </ul>
+  </header>
+
+  <main>
+    <!-- ============ HERO SECTION ============ -->
+    <section id="home" class="hero-section relative overflow-hidden flex items-center min-h-screen pt-28 pb-16">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow-1" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow-2" aria-hidden="true"></div>
+
+      <div class="max-w-7xl mx-auto px-6 lg:px-10 grid md:grid-cols-2 gap-14 items-center w-full relative z-10">
+        <!-- Text Content -->
+        <div data-aos="fade-right" data-aos-duration="800">
+          <p class="hero-eyebrow">Mahasiswa Rekayasa Sistem Komputer</p>
+          <h1 class="hero-title">
+            Halo, saya <span class="text-gradient">Jodika Sela</span>
+          </h1>
+          <p class="hero-subtitle">Web Developer Enthusiast</p>
+          <p class="hero-desc">
+            Mahasiswa semester 3 Program Studi Rekayasa Sistem Komputer, Universitas Tanjungpura,
+            berlatar belakang Teknik Komputer dan Jaringan (TKJ). Tertarik pada pengembangan website,
+            teknologi informasi, serta administrasi data — dan selalu antusias belajar hal baru.
+          </p>
+          <div class="flex flex-wrap gap-4 mt-8">
+            <a href="#projects" class="btn-primary">
+              <i class="fa-solid fa-folder-open"></i> Lihat Portofolio
+            </a>
+            <a href="#contact" class="btn-secondary">
+              <i class="fa-solid fa-paper-plane"></i> Hubungi Saya
+            </a>
+            <a href="assets/CV.JODIKA SELA.pdf" id="download-cv" class="btn-ghost" download>
+              <i class="fa-solid fa-download"></i> Download CV
+            </a>
+          </div>
+        </div>
+
+        <!-- Profile Image -->
+        <div class="flex justify-center md:justify-end" data-aos="fade-left" data-aos-duration="800">
+          <div class="hero-photo-wrap">
+            <div class="hero-photo-ring"></div>
+            <img src="profile.jpeg" alt="Foto profil Jodika Sela" class="hero-photo" width="360" height="450" loading="eager" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll cue -->
+      <a href="#about" class="scroll-cue" aria-label="Gulir ke bawah">
+        <i class="fa-solid fa-chevron-down"></i>
+      </a>
+    </section>
+
+    <!-- ============ ABOUT SECTION ============ -->
+    <section id="about" class="section-padding bg-section-alt">
+      <div class="max-w-7xl mx-auto px-6 lg:px-10">
+        <div class="section-heading" data-aos="fade-up">
+          <h2>Tentang Saya</h2>
+          <p>Latar belakang, pengalaman, dan nilai yang saya bawa dalam bekerja.</p>
+        </div>
+
+        <div class="grid md:grid-cols-5 gap-12 items-start">
+          <div class="md:col-span-3 space-y-4 about-text" data-aos="fade-up" data-aos-delay="100">
+            <p>
+              Lulusan SMK Negeri 1 Ketapang jurusan Teknik Komputer dan Jaringan (TKJ) yang saat ini
+              sedang menempuh pendidikan S1 Rekayasa Sistem Komputer di Universitas Tanjungpura.
+            </p>
+            <p>
+              Saya memiliki pengalaman magang di Diskominfo Ketapang dan Gamelab Indonesia yang membantu
+              saya mengembangkan keterampilan teknis maupun kemampuan bekerja secara profesional.
+            </p>
+            <p>
+              Terbiasa menggunakan komputer dan Microsoft Word, serta memiliki pemahaman dasar mengenai
+              HTML, CSS, JavaScript, dan jaringan komputer. Saya juga memiliki kemampuan komunikasi yang
+              baik, mampu mengikuti instruksi dengan disiplin, serta mudah beradaptasi dengan lingkungan baru.
+            </p>
+          </div>
+
+          <div class="md:col-span-2 grid grid-cols-2 gap-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="info-card">
+              <i class="fa-solid fa-id-card"></i>
+              <span>Memiliki SIM C</span>
+            </div>
+            <div class="info-card">
+              <i class="fa-solid fa-motorcycle"></i>
+              <span>Kendaraan Pribadi</span>
+            </div>
+            <div class="info-card">
+              <i class="fa-solid fa-laptop"></i>
+              <span>Laptop Pribadi</span>
+            </div>
+            <div class="info-card">
+              <i class="fa-solid fa-person-walking-luggage"></i>
+              <span>Siap Kerja Lapangan</span>
+            </div>
+            <div class="info-card">
+              <i class="fa-solid fa-bolt"></i>
+              <span>Cepat Belajar</span>
+            </div>
+            <div class="info-card">
+              <i class="fa-solid fa-graduation-cap"></i>
+              <span>Kerja Sambil Kuliah</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS SECTION ============ -->
+    <section id="skills" class="section-padding">
+      <div class="max-w-7xl mx-auto px-6 lg:px-10">
+        <div class="section-heading" data-aos="fade-up">
+          <h2>Keahlian</h2>
+          <p>Kemampuan teknis dan non-teknis yang terus saya asah.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Frontend -->
+          <div class="skill-card" data-aos="fade-up">
+            <h3><i class="fa-solid fa-code"></i> Frontend</h3>
+            <div class="skill-item"><span>HTML</span><div class="skill-bar"><div style="width:85%"></div></div></div>
+            <div class="skill-item"><span>CSS</span><div class="skill-bar"><div style="width:80%"></div></div></div>
+            <div class="skill-item"><span>JavaScript</span><div class="skill-bar"><div style="width:65%"></div></div></div>
+            <div class="skill-item"><span>Bootstrap</span><div class="skill-bar"><div style="width:70%"></div></div></div>
+            <div class="skill-item"><span>Tailwind CSS</span><div class="skill-bar"><div style="width:70%"></div></div></div>
+          </div>
+
+          <!-- Komputer & Jaringan -->
+          <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+            <h3><i class="fa-solid fa-network-wired"></i> Komputer & Jaringan</h3>
+            <div class="skill-item"><span>Dasar Jaringan Komputer</span><div class="skill-bar"><div style="width:75%"></div></div></div>
+            <div class="skill-item"><span>Instalasi Sistem Operasi</span><div class="skill-bar"><div style="width:80%"></div></div></div>
+            <div class="skill-item"><span>Troubleshooting Dasar</span><div class="skill-bar"><div style="width:75%"></div></div></div>
+            <div class="skill-item"><span>Pengoperasian Komputer</span><div class="skill-bar"><div style="width:90%"></div></div></div>
+          </div>
+
+          <!-- Perkantoran -->
+          <div class="skill-card" data-aos="fade-up">
+            <h3><i class="fa-solid fa-file-word"></i> Perkantoran</h3>
+            <div class="skill-item"><span>Microsoft Word</span><div class="skill-bar"><div style="width:85%"></div></div></div>
+            <div class="skill-item"><span>Pengelolaan Dokumen Digital</span><div class="skill-bar"><div style="width:80%"></div></div></div>
+          </div>
+
+          <!-- Soft Skills -->
+          <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+            <h3><i class="fa-solid fa-people-group"></i> Soft Skills</h3>
+            <div class="tag-list">
+              <span class="tag"><i class="fa-solid fa-comments"></i> Komunikasi</span>
+              <span class="tag"><i class="fa-solid fa-handshake"></i> Kerja Sama Tim</span>
+              <span class="tag"><i class="fa-solid fa-clock"></i> Disiplin</span>
+              <span class="tag"><i class="fa-solid fa-shield-halved"></i> Tanggung Jawab</span>
+              <span class="tag"><i class="fa-solid fa-puzzle-piece"></i> Problem Solving</span>
+              <span class="tag"><i class="fa-solid fa-bolt"></i> Belajar Cepat</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EDUCATION SECTION ============ -->
+    <section id="education" class="section-padding bg-section-alt">
+      <div class="max-w-7xl mx-auto px-6 lg:px-10">
+        <div class="section-heading" data-aos="fade-up">
+          <h2>Pendidikan</h2>
+          <p>Perjalanan akademik yang membentuk kemampuan saya.</p>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item" data-aos="fade-up">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-period">2024 — Sekarang</span>
+              <h3>Universitas Tanjungpura</h3>
+              <p>S1 Rekayasa Sistem Komputer — Semester 3 (Sedang Berlangsung)</p>
+            </div>
+          </div>
+          <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-period">Lulusan</span>
+              <h3>SMK Negeri 1 Ketapang</h3>
+              <p>Teknik Komputer dan Jaringan (TKJ)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE SECTION ============ -->
+    <section id="experience" class="section-padding">
+      <div class="max-w-7xl mx-auto px-6 lg:px-10">
+        <div class="section-heading" data-aos="fade-up">
+          <h2>Pengalaman</h2>
+          <p>Pengalaman magang dan praktik kerja yang telah saya jalani.</p>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item" data-aos="fade-up">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-period">Magang / PKL</span>
+              <h3>Diskominfo Ketapang</h3>
+              <ul class="exp-list">
+                <li>Membantu kegiatan dokumentasi dan live streaming.</li>
+                <li>Berperan sebagai kameramen dalam beberapa kegiatan.</li>
+                <li>Mengoperasikan laptop untuk mendukung live streaming.</li>
+                <li>Membantu persiapan dan pengelolaan peralatan.</li>
+                <li>Berkoordinasi dengan tim.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-period">Program Magang Online</span>
+              <h3>Gamelab Indonesia</h3>
+              <ul class="exp-list">
+                <li>Mengembangkan website UMKM.</li>
+                <li>Membuat tampilan website menggunakan HTML, CSS, dan JavaScript.</li>
+                <li>Menyelesaikan proyek sesuai target.</li>
+                <li>Mengembangkan kemampuan bekerja mandiri.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS SECTION ============ -->
+    <section id="projects" class="section-padding bg-section-alt">
+      <div class="max-w-7xl mx-auto px-6 lg:px-10">
+        <div class="section-heading" data-aos="fade-up">
+          <h2>Proyek</h2>
+          <p>Beberapa proyek yang pernah saya kerjakan.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Project 1 -->
+          <article class="project-card" data-aos="fade-up">
+            <div class="project-thumb">
+              <img src="assets/project1.jpg" alt="Thumbnail Website UMKM" loading="lazy" width="800" height="500" />
+            </div>
+            <div class="project-body">
+              <h3>Website UMKM</h3>
+              <p>Membangun website sederhana untuk mendukung promosi usaha mikro menggunakan HTML, CSS, dan JavaScript.</p>
+              <div class="badge-list">
+                <span class="badge">HTML</span>
+                <span class="badge">CSS</span>
+                <span class="badge">JavaScript</span>
+              </div>
+              <div class="project-actions">
+                <a href="#" class="btn-mini"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo</a>
+                <a href="#" class="btn-mini btn-mini-outline"><i class="fa-brands fa-github"></i> Source Code</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="project-thumb">
+              <img src="assets/project2.jpg" alt="Thumbnail Landing Page Modern" loading="lazy" width="800" height="500" />
+            </div>
+            <div class="project-body">
+              <h3>Landing Page Modern</h3>
+              <p>Membuat landing page responsif dengan desain modern dan pengalaman pengguna yang baik.</p>
+              <div class="badge-list">
+                <span class="badge">HTML</span>
+                <span class="badge">CSS</span>
+                <span class="badge">Bootstrap</span>
+              </div>
+              <div class="project-actions">
+                <a href="#" class="btn-mini"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo</a>
+                <a href="#" class="btn-mini btn-mini-outline"><i class="fa-brands fa-github"></i> Source Code</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card" data-aos="fade-up">
+            <div class="project-thumb">
+              <img src="assets/project3.jpg" alt="Thumbnail Website Portofolio" loading="lazy" width="800" height="500" />
+            </div>
+            <div class="project-body">
+              <h3>Website Portofolio</h3>
+              <p>Website portofolio pribadi untuk menampilkan profil, pengalaman, dan kemampuan.</p>
+              <div class="badge-list">
+                <span class="badge">HTML</span>
+                <span class="badge">Tailwind CSS</span>
+                <span class="badge">JavaScript</span>
+              </div>
+              <div class="project-actions">
+                <a href="#" class="btn-mini"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo</a>
+                <a href="#" class="btn-mini btn-mini-outline"><i class="fa-brands fa-github"></i> Source Code</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4 -->
+          <article class="project-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="project-thumb">
+              <img src="assets/project4.jpg" alt="Thumbnail Proyek Akademik Berbasis Web" loading="lazy" width="800" height="500" />
+            </div>
+            <div class="project-body">
+              <h3>Proyek Akademik Berbasis Web</h3>
+              <p>Berbagai tugas dan proyek perkuliahan yang berkaitan dengan pengembangan website dan teknologi informasi.</p>
+              <div class="badge-list">
+                <span class="badge">HTML</span>
+                <span class="badge">CSS</span>
+                <span class="badge">JavaScript</span>
+              </div>
+              <div class="project-actions">
+                <a href="#" class="btn-mini"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo</a>
+                <a href="#" class="btn-mini btn-mini-outline"><i class="fa-brands fa-github"></i> Source Code</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CAREER GOAL SECTION ============ -->
+    <section id="goal" class="section-padding goal-section">
+      <div class="max-w-4xl mx-auto px-6 lg:px-10 text-center" data-aos="fade-up">
+        <h2 class="goal-title">Tujuan Karier</h2>
+        <p class="goal-text">
+          Saat ini saya sedang mencari peluang kerja yang dapat dijalankan sambil menjalani perkuliahan.
+          Saya terbuka untuk posisi Data Entry, Administrasi, Operator Komputer, IT Support, Web Developer
+          Junior, maupun pekerjaan lain yang menerima mahasiswa aktif atau fresh graduate.
+        </p>
+        <p class="goal-text">
+          Saya berharap dapat terus mengembangkan kemampuan teknis dan profesional, sekaligus memberikan
+          kontribusi positif bagi perusahaan atau organisasi tempat saya bekerja.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT SECTION ============ -->
+    <section id="contact" class="section-padding bg-section-alt">
+      <div class="max-w-7xl mx-auto px-6 lg:px-10">
+        <div class="section-heading" data-aos="fade-up">
+          <h2>Hubungi Saya</h2>
+          <p>Terbuka untuk peluang kerja, kolaborasi, maupun sekadar bertukar sapa.</p>
+        </div>
+
+        <div class="grid md:grid-cols-5 gap-10">
+          <!-- Contact Info -->
+          <div class="md:col-span-2 space-y-4" data-aos="fade-up">
+            <a href="https://wa.me/6285787022962" target="_blank" rel="noopener" class="contact-item">
+              <span class="contact-icon"><i class="fa-brands fa-whatsapp"></i></span>
+              <span>
+                <strong>WhatsApp</strong>
+                <small>0857-8702-2962</small>
+              </span>
+            </a>
+            <a href="mailto:jodikasela11@gmail.com" class="contact-item">
+              <span class="contact-icon"><i class="fa-solid fa-envelope"></i></span>
+              <span>
+                <strong>Email</strong>
+                <small>jodikasela11@gmail.com</small>
+              </span>
+            </a>
+            <a href="#" target="_blank" rel="noopener" class="contact-item">
+              <span class="contact-icon"><i class="fa-brands fa-github"></i></span>
+              <span>
+                <strong>GitHub</strong>
+                <small>github.com/jodikasela</small>
+              </span>
+            </a>
+            <a href="#" target="_blank" rel="noopener" class="contact-item">
+              <span class="contact-icon"><i class="fa-brands fa-linkedin"></i></span>
+              <span>
+                <strong>LinkedIn</strong>
+                <small>linkedin.com/in/jodikasela</small>
+              </span>
+            </a>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="md:col-span-3" data-aos="fade-up" data-aos-delay="100">
+            <form id="contact-form" class="contact-form">
+              <div class="form-group">
+                <label for="name">Nama</label>
+                <input type="text" id="name" name="name" placeholder="Nama lengkap Anda" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Alamat email Anda" required />
+              </div>
+              <div class="form-group">
+                <label for="message">Pesan</label>
+                <textarea id="message" name="message" rows="5" placeholder="Tulis pesan Anda di sini..." required></textarea>
+              </div>
+              <button type="submit" class="btn-primary w-full justify-center">
+                <i class="fa-solid fa-paper-plane"></i> Kirim Pesan
+              </button>
+              <p id="form-status" class="form-status" role="status"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 py-14 grid md:grid-cols-3 gap-10">
+      <div>
+        <a href="#home" class="font-heading font-bold text-xl text-white">Jodika<span class="text-cyan">.</span>Sela</a>
+        <p class="footer-desc">Mahasiswa Rekayasa Sistem Komputer & Web Developer Enthusiast asal Ketapang, Kalimantan Barat.</p>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#about">Tentang</a></li>
+          <li><a href="#skills">Keahlian</a></li>
+          <li><a href="#projects">Proyek</a></li>
+          <li><a href="#contact">Kontak</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Sosial Media</h4>
+        <div class="footer-socials">
+          <a href="https://wa.me/6285787022962" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="mailto:jodikasela11@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="#" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="#" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Jodika Sela. Seluruh hak cipta dilindungi.</p>
+    </div>
+  </footer>
+
+  <!-- ============ BACK TO TOP BUTTON ============ -->
+  <button id="back-to-top" aria-label="Kembali ke atas">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- AOS Animation JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
