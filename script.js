@@ -1,8 +1,3 @@
-/* =========================================================
-   JODIKA SELA — PORTFOLIO SCRIPT
-   Vanilla JavaScript — tidak menggunakan framework
-   ========================================================= */
-
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ---------------------------------------------------
